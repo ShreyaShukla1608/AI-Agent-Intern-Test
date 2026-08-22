@@ -15,6 +15,13 @@ An intelligent, evaluation-driven AI Support Agent built to handle customer orde
   * `retriever`: Queries policy embeddings with automatic filtering for superseded documentation.
 
 ---
+## Observability & Logging
+
+The agent includes built-in structured logging to trace execution steps. Running the CLI or evaluation benchmarks prints structured traces including:
+* Current user input & conversation context.
+* Vector retrieval passages, metadata, and similarity scores.
+* Tool invocations and sanitized payload outputs.
+* Handlers for exceptions, guardrail violations, and human handoffs.
 
 ## Setup & Local Installation
 
