@@ -38,4 +38,4 @@ pip install -r requirements.txt
 
 # 4. Set up environment variables
 copy .env.example .env
-![AI Support Agent Demo](assets/demo.mp4)
+![AI Support Agent Demo](assets/demo.gif)
