@@ -22,7 +22,7 @@ class SupportAgent:
         
         lower_msg = user_message.lower()
         
-        # 1. System Prompt / Injection Guardrail
+    
         if any(w in lower_msg for w in ["system prompt", "hidden instructions", "reveal secrets", "ignore previous"]):
             response = "I am unable to share my internal instructions or system configuration. How can I help you with your Aster & Row order or policies today?"
             self.conversation_history.append({"role": "assistant", "content": response})
@@ -33,7 +33,7 @@ class SupportAgent:
                 "tool_result": None
             }
 
-        # 2. Order Lookup Processing
+
         tool_result = None
         order_match = re.search(r"ord-\d+", lower_msg)
         
@@ -50,7 +50,7 @@ class SupportAgent:
                 "tool_result": None
             }
 
-        # 3. Knowledge Base Retrieval
+
         retrieved_passages = self.retriever.retrieve(user_message)
         sources = [p["source"] for p in retrieved_passages]
         
@@ -58,7 +58,7 @@ class SupportAgent:
         if tool_result:
             context_text += f"\n\n[Tool Result]: {json.dumps(tool_result)}"
 
-        # 4. Response Synthesis Logic
+
         if tool_result and "error" in tool_result:
             response = tool_result["error"]
             handoff = False

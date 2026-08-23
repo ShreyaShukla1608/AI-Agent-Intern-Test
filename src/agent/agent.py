@@ -14,7 +14,7 @@ class SupportAgent:
         if match:
             return match.group(0)
 
-        # Match any order ID directly following 'order id', 'order number', or 'order #'
+    
         keyword_match = re.search(r"order\s+(?:id|number|#)\s*:?\s*([^\s,?.!]+)", query, re.IGNORECASE)
         if keyword_match:
             candidate = keyword_match.group(1).strip()

@@ -1,9 +1,6 @@
 from src.agent.agent import SupportAgent
 
 
-# ---------------------------------------------------------------------------
-# Core Base Evaluation Suite (5 Tests)
-# ---------------------------------------------------------------------------
 
 def test_order_lookup_normalization():
     agent = SupportAgent()
@@ -37,9 +34,6 @@ def test_active_policy_precedence():
     assert any("01-returns-policy-current.md" in src for src in res["sources"])
 
 
-# ---------------------------------------------------------------------------
-# Expanded Original Evaluation Suite (5 Additional Tests)
-# ---------------------------------------------------------------------------
 
 def test_gift_card_refund_restriction():
     """Verify system adheres to gift card non-refundability rules."""
